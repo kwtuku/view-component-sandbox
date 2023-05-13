@@ -24,6 +24,7 @@ AllCops:
     - config/initializers/inflections.rb
     - config/initializers/permissions_policy.rb
     - config/puma.rb
+    - lib/tasks/auto_annotate_models.rake
     - spec/rails_helper.rb
     - spec/spec_helper.rb
 

@@ -60,14 +60,14 @@ jobs:
         with:
           name: screenshots
           path: tmp/capybara
-        if: failure() && steps.run-rspec.outcome == "failure"
+        if: failure() && steps.run-rspec.outcome == 'failure'
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
           name: code-coverage-report
           path: coverage
-        if: steps.run-rspec.outcome == "success" || (failure() && steps.run-rspec.outcome == "failure")
+        if: steps.run-rspec.outcome == 'success' || (failure() && steps.run-rspec.outcome == 'failure')
 
   lint:
     runs-on: ubuntu-22.04
@@ -97,8 +97,8 @@ jobs:
       - name: Run ESLint
         run: yarn run eslint app/javascript
         id: run-eslint
-        if: steps.run-rubocop.outcome == "success" || (failure() && steps.run-rubocop.outcome == "failure")
+        if: steps.run-rubocop.outcome == 'success' || (failure() && steps.run-rubocop.outcome == 'failure')
 
       - name: Run Prettier
         run: yarn run prettier --check app/assets/stylesheets app/javascript
-        if: steps.run-eslint.outcome == "success" || (failure() && steps.run-eslint.outcome == "failure")
+        if: steps.run-eslint.outcome == 'success' || (failure() && steps.run-eslint.outcome == 'failure')

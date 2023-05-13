@@ -30,5 +30,14 @@ module ViewComponentSandbox
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators do |g|
+      g.orm :active_record, primary_key_type: :uuid
+    end
+
+    config.i18n.default_locale = :ja
+    config.time_zone = "Asia/Tokyo"
+
+    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
   end
 end

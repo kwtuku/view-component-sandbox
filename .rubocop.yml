@@ -47,6 +47,17 @@ Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
 #　====================================================================================================
 
+Layout/LineLength:
+  Max: 160
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
+
 Style/Documentation:
   Enabled: false
 

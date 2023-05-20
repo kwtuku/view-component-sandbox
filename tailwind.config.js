@@ -5,4 +5,5 @@ module.exports = {
     "./app/javascript/**/*.js",
     "./app/views/**/*.html.erb",
   ],
+  plugins: [require("@tailwindcss/forms")],
 }

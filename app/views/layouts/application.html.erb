@@ -12,25 +12,15 @@
   </head>
 
   <body>
-    <header>
-      <%= link_to "AppName", root_path %>
-      <nav>
-        <ul>
-          <li>
-            <%= link_to t("devise.shared.links.sign_in"), new_user_session_path %>
-          </li>
-        </ul>
-      </nav>
-      <% if user_signed_in? %>
-        <%= current_user.email %>
-        <%= link_to "アカウント編集", edit_user_registration_path %>
-        <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <% end %>
-    </header>
-    <main>
-      <%= notice %>
-      <%= alert %>
-      <%= yield %>
-    </main>
+    <%= render "layouts/navbar" %>
+    <%= render "layouts/sidebar" %>
+
+    <div class="p-4 sm:ml-64 mt-16">
+      <div class="rounded-lg border-2 border-dashed border-gray-200 p-4">
+        <%= notice %>
+        <%= alert %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

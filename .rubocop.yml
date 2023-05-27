@@ -1,4 +1,6 @@
 require:
+  - rubocop-capybara
+  - rubocop-factory_bot
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
@@ -57,6 +59,16 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Exclude:
     - db/migrate/*
+
+RSpec/ContextWording:
+  AllowedPatterns:
+    - とき$
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

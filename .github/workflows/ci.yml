@@ -69,6 +69,14 @@ jobs:
           path: coverage
         if: steps.run-rspec.outcome == 'success' || (failure() && steps.run-rspec.outcome == 'failure')
 
+      - name: Run Annotate
+        env:
+          RAILS_ENV: development
+        run: |
+          bin/rails annotate_models
+          git diff --exit-code
+        if: steps.run-rspec.outcome == 'success' || (failure() && steps.run-rspec.outcome == 'failure')
+
   lint:
     runs-on: ubuntu-22.04
     timeout-minutes: 10
@@ -96,9 +104,8 @@ jobs:
 
       - name: Run ESLint
         run: yarn run eslint app/javascript
-        id: run-eslint
         if: steps.run-rubocop.outcome == 'success' || (failure() && steps.run-rubocop.outcome == 'failure')
 
       - name: Run Prettier
         run: yarn run prettier --check app/assets/stylesheets app/javascript
-        if: steps.run-eslint.outcome == 'success' || (failure() && steps.run-eslint.outcome == 'failure')
+        if: steps.run-rubocop.outcome == 'success' || (failure() && steps.run-rubocop.outcome == 'failure')

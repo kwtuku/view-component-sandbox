@@ -101,4 +101,11 @@ jobs:
 
       - name: Run Prettier
         run: yarn run prettier --check app/assets/stylesheets app/javascript
+        id: run-prettier
         if: steps.run-eslint.outcome == 'success' || (failure() && steps.run-eslint.outcome == 'failure')
+
+      - name: Run Annotate
+        run: |
+          bin/rails annotate_models
+          git diff --exit-code
+        if: steps.run-prettier.outcome == 'success' || (failure() && steps.run-prettier.outcome == 'failure')

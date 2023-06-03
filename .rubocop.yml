@@ -52,6 +52,10 @@ Style/TrailingCommaInHashLiteral:
 Layout/LineLength:
   Max: 160
 
+Lint/MissingSuper:
+  Exclude:
+    - app/components/*
+
 Metrics/AbcSize:
   Exclude:
     - db/migrate/*

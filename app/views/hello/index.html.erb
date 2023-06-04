@@ -1,0 +1,39 @@
+<%# https://github.com/primer/view_components-template/blob/3c858b03aa512e10c188ccb84f5e08731356a308/app/views/hello/index.html.erb %>
+<%= render Primer::Box.new(bg: :default, width: :full, display: :flex, justify_content: :center, align_items: :center, direction: :column,  p: 5, style: "height: 100vh") do |component| %>
+        <% # HEADER %>
+        <%= render(Primer::Beta::Octicon.new(icon: "mark-github", size: :medium, color: :default)) %>
+        <% # CODING BOX %>
+        <%= render Primer::Box.new(bg: :emphasis, direction: :column, display: :flex, w: :full, border_radius: 2, p: 4, my: 6, style: "max-width: 600px; height: 300px") do |component| %>
+            <% # CODE LINE %>
+            <%= render Primer::Box.new(mb: 2, color: :on_emphasis, display: :flex) do |component| %>
+                <%= render Primer::Box.new(display: :flex, style: "width: 20px; min-width: 20px; margin-top: 2px") do |component| %>
+                    <%= render(Primer::Beta::Octicon.new(icon: "check", color: :success)) %>
+                <% end %>
+                <%= render Primer::Beta::Text.new(font_size:5, font_family: :mono, ml: 2) do |component| %>
+                    Mona's playground successfully initialised...
+                <% end %>
+            <% end %>
+            <% # CODE LINE %>
+            <%= render Primer::Box.new(mb: 2, color: :on_emphasis, display: :flex) do |component| %>
+                <%= render Primer::Box.new(display: :flex, style: "width: 20px; min-width: 20px; margin-top: 2px") do |component| %>
+                    <%= render(Primer::Beta::Octicon.new(icon: "comment", color: :accent)) %>
+                <% end %>
+                <%= render Primer::Beta::Text.new(font_size: 5, font_family: :mono, ml: 2) do |component| %>
+                    Visit&nbsp;<%= render(Primer::Beta::Text.new(color: :attention, display: :inline_block)) { "app/views/hello/index.html.erb" } %>&nbsp;and start building your own layouts using Primer.
+                <% end %>
+            <% end %>
+            <%= render Primer::Box.new(ml: 3, mt: 2, display: :inline_block) do |component| %>
+                <%= image_tag "mona-loading.gif", width: 48, height: 48 %>
+            <% end %>
+        <% end %>
+        <% # FOOTER %>
+        <%= render Primer::Box.new(text_align: :center) do |component| %>
+            <%= render Primer::Box.new(mr: 2, display: :inline_block) do |component| %>
+                <%= render(Primer::Beta::Octicon.new(icon: "mortar-board", color: :attention, mr: 1, size: :small)) %>
+                <%= render(Primer::Beta::Text.new(color: :attention, font_size: 4, display: :inline_block)) { "Tip" } %>
+            <% end %>
+            <%= render Primer::Beta::Text.new(mr: 2, font_size: 4, display: :inline_block, color: :default) do |component| %>
+                Before you get started check out our <%= render(Primer::Beta::Link.new(href: "https://primer.style/view-components", target: :blank)) { "Primer ViewComponents Documentation" } %>
+            <% end %>
+        <% end %>
+<% end %>

@@ -17,6 +17,8 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 gem "devise"
+gem "primer_view_components"
+gem "view_component"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]

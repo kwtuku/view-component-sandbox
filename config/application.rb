@@ -41,3 +41,6 @@ module ViewComponentSandbox
     config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
   end
 end
+
+require "view_component"
+require "primer/view_components/engine"

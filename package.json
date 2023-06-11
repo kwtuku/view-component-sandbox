@@ -6,15 +6,15 @@
     "@hotwired/turbo-rails": "^7.3.0",
     "@tailwindcss/forms": "^0.5.3",
     "autoprefixer": "^10.4.14",
-    "esbuild": "^0.17.18",
-    "postcss": "^8.4.23",
+    "esbuild": "^0.18.0",
+    "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
-    "eslint": "^8.40.0",
+    "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8"
+    "prettier-plugin-tailwindcss": "^0.3.0"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",

@@ -12,6 +12,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!-- https://flowbite.com/docs/components/sidebar/#sidebar-with-navbar -->
+    <%= render NavbarComponent.new %>
+    <%= render SidebarComponent.new %>
+
+    <!-- ml-64 はサイドバーの w-64 と揃える -->
+    <!-- mt-14 はナブバーの高さ -->
+    <div class="mt-14 p-4 sm:ml-64">
+      <%= yield %>
+    </div>
   </body>
 </html>

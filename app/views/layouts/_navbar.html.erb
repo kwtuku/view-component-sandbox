@@ -29,6 +29,29 @@
           </li>
         </ul>
       </div>
+
+      <div class="inline-block text-sm px-4 py-2 leading-none rounded no-underline text-gray hover:text-gray-900 hover:bg-white mt-4 lg:mt-0">
+        <div class="relative" data-controller="dropdown">
+          <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
+            <span class="appearance-none flex items-center inline-block text-gray-700">
+              <% if current_user %>
+                <img class="rounded-full h-8 w-8 align-middle" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="user photo" />
+              <% end %>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 w-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+            </span>
+          </div>
+          <div data-dropdown-target="menu" class="absolute right-0 mt-2 hidden">
+            <div class="bg-white shadow rounded border overflow-hidden">
+                <%= link_to 'Profile', "edit_user_registration_path", data: {action: "click->dropdown#toggle"}, class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                <%= link_to 'Password', "password_path", data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                <%= link_to 'Accounts', "user_connected_accounts_path", data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                <%= link_to 'Billing', "subscription_path", data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                <%= link_to 'Sign Out', "destroy_user_session_path", method: :delete, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-8 py-3 border-t text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <button data-collapse-toggle="mobile-menu-2" type="button" class="ml-1 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden" aria-controls="mobile-menu-2" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>

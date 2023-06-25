@@ -79,6 +79,18 @@
               >Contact</a
             >
           </li>
+          <% if helpers.user_signed_in? %>
+            <li>
+              <%= link_to "アカウント編集", edit_user_registration_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
+            </li>
+            <li>
+              <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to t("devise.shared.links.sign_in"), new_user_session_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
+            </li>
+          <% end %>
         </ul>
       </div>
       <div class="flex items-center">

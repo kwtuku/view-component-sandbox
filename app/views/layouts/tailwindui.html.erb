@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="<%= "h-full" if action_name.in? %w[_404 sign_in_form] %>">
+  <head>
+    <title>ViewComponentSandbox</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="turbo-cache-control" content="no-cache">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="<%= "h-full" if action_name.in? %w[_404 sign_in_form] %>">
+    <% if action_name.in? %w[_404 sign_in_form] %>
+      <%= yield %>
+    <% else %>
+      <div class="p-10">
+        <%= yield %>
+      </div>
+    <% end %>
+  </body>
+</html>

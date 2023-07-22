@@ -9,15 +9,15 @@ export default class extends Controller {
   static values = { name: String }
 
   initialize() {
-    this.Components = {
+    this.components = {
       Hello: Hello,
       Hi: Hi,
     }
   }
 
   connect() {
-    const Component = this.Components[this.nameValue]
     const root = createRoot(this.element)
+    const Component = this.components[this.nameValue]
     root.render(
       <StrictMode>
         <Component />

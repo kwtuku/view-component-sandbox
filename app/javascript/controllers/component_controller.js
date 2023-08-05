@@ -5,7 +5,9 @@ import { createRoot } from "react-dom/client"
 import Hello from "../components/Hello"
 import Hi from "../components/Hi"
 import CategoryFilter from "../components/CategoryFilter"
+import ProductOverview from "../components/ProductOverview"
 import ProductQuickview from "../components/ProductQuickview"
+import ShoppingCart from "../components/ShoppingCart"
 import StoreNavigation from "../components/StoreNavigation"
 
 export default class extends Controller {
@@ -16,7 +18,9 @@ export default class extends Controller {
       Hello: Hello,
       Hi: Hi,
       CategoryFilter: CategoryFilter,
+      ProductOverview: ProductOverview,
       ProductQuickview: ProductQuickview,
+      ShoppingCart: ShoppingCart,
       StoreNavigation: StoreNavigation,
     }
   }
@@ -24,7 +28,6 @@ export default class extends Controller {
   connect() {
     const root = createRoot(this.element)
     const Component = this.components[this.nameValue]
-    console.log(this.nameValue)
     root.render(
       <StrictMode>
         <Component />

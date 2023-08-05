@@ -6,6 +6,7 @@ import Hello from "../components/Hello"
 import Hi from "../components/Hi"
 import CategoryFilter from "../components/CategoryFilter"
 import ProductQuickview from "../components/ProductQuickview"
+import StoreNavigation from "../components/StoreNavigation"
 
 export default class extends Controller {
   static values = { name: String }
@@ -16,6 +17,7 @@ export default class extends Controller {
       Hi: Hi,
       CategoryFilter: CategoryFilter,
       ProductQuickview: ProductQuickview,
+      StoreNavigation: StoreNavigation,
     }
   }
 

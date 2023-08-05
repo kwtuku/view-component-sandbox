@@ -6,48 +6,9 @@
 >
   <div class="h-full overflow-y-auto bg-white px-3 py-4">
     <ul class="space-y-2 font-medium">
-      <% 3.times do %>
-      <li>
-        <a
-          href="#"
-          class="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
-        >
-          <svg
-            aria-hidden="true"
-            class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-          </svg>
-          <span class="ml-3">Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
-        >
-          <svg
-            aria-hidden="true"
-            class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-            ></path>
-          </svg>
-          <span class="ml-3 flex-1 whitespace-nowrap">Kanban</span>
-          <span
-            class="ml-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800"
-            >Pro</span
-          >
-        </a>
-      </li>
+      <%= render SidebarItemComponent.new(name: "Dashboard", url: root_path, icon_id: "dashboard") %>
+      <%= render SidebarItemComponent.new(name: "Kanban", url: root_path, icon_id: "kanban", badge_text: "Pro", badge_color: "dark") %>
+      <%= render SidebarItemComponent.new(name: "Inbox", url: root_path, icon_id: "inbox", badge_text: "3", badge_color: "dark") %>
       <li>
         <a
           href="#"
@@ -158,7 +119,6 @@
           <span class="ml-3 flex-1 whitespace-nowrap">Sign Up</span>
         </a>
       </li>
-      <% end %>
     </ul>
   </div>
 </aside>

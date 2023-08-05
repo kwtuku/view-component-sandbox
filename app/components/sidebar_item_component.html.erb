@@ -1,0 +1,15 @@
+<li>
+  <a
+    href=<%= @url %>
+    class="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
+  >
+    <%= icon %>
+    <span class="ml-3 flex-1 whitespace-nowrap"><%= @name %></span>
+    <% if @badge_text %>
+      <span
+        class="ml-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800"
+        ><%= @badge_text %></span
+      >
+    <% end %>
+  </a>
+</li>

@@ -1,7 +1,7 @@
 <!-- mt-14 はナブバーの高さ -->
 <aside
   id="logo-sidebar"
-  class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full border-r border-gray-200 bg-white pt-14 transition-transform sm:translate-x-0"
+  class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full border-r border-gray-200 bg-white mt-14 transition-transform sm:translate-x-0"
   aria-label="Sidebar"
 >
   <div class="h-full overflow-y-auto bg-white px-3 py-4">
@@ -39,6 +39,19 @@
       <%= render SidebarItemComponent.new(name: "Sign Up", url: root_path) do |component| %>
         <% component.with_icon { helpers.sign_up_icon } %>
       <% end %>
+      <%= render SidebarItemComponent.new(name: "404", url: _404_path) %>
+      <%= render SidebarItemComponent.new(name: "Category Filter", url: category_filter_path) %>
+      <%= render SidebarItemComponent.new(name: "Category Preview", url: category_preview_path) %>
+      <%= render SidebarItemComponent.new(name: "Description List", url: description_list_path) %>
+      <%= render SidebarItemComponent.new(name: "Form Layout", url: form_layout_path) %>
+      <%= render SidebarItemComponent.new(name: "Product Feature", url: product_feature_path) %>
+      <%= render SidebarItemComponent.new(name: "Product List", url: product_list_path) %>
+      <%= render SidebarItemComponent.new(name: "Product Overview", url: product_overview_path) %>
+      <%= render SidebarItemComponent.new(name: "Product Quickview", url: product_quickview_path) %>
+      <%= render SidebarItemComponent.new(name: "Promo Section", url: promo_section_path) %>
+      <%= render SidebarItemComponent.new(name: "Shopping Cart", url: shopping_cart_path) %>
+      <%= render SidebarItemComponent.new(name: "Sign In Form", url: sign_in_form_path) %>
+      <%= render SidebarItemComponent.new(name: "Store Navigation", url: store_navigation_path) %>
     </ul>
   </div>
 </aside>

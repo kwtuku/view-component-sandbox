@@ -1,7 +1,15 @@
-test:
+default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+# ci で bin/rails annotate_models を実行するのに必要
+development:
+  <<: *default
+  database: view_component_sandbox_development
+
+test:
+  <<: *default
   database: view_component_sandbox_test<%= ENV["TEST_ENV_NUMBER"] %>
   username: postgres
   password: password

@@ -20,10 +20,10 @@ jobs:
     env:
       RAILS_ENV: test
     steps:
-      - name: Install fonts-noto-cjk
+      - name: Install fonts-noto
         run: |
           sudo apt-get update
-          sudo apt-get install fonts-noto-cjk
+          sudo apt-get install fonts-noto
 
       - name: Checkout code
         uses: actions/checkout@v3

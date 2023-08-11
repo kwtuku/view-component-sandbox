@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="turbo-cache-control" content="no-cache">
-
-    <link href="https://unpkg.com/@primer/css@^20.2.4/dist/primer.css" rel="stylesheet" />
-    <%= javascript_include_tag("primer_view_components") %>
+    <link href="https://unpkg.com/@primer/css@^21.0.7/dist/primer.css" rel="stylesheet" data-turbo-track="reload" />
+    <%= javascript_include_tag "primer_view_components", "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>

@@ -17,7 +17,6 @@ jobs:
           - 5432:5432
         env:
           POSTGRES_PASSWORD: password
-          POSTGRES_USER: runner
     env:
       RAILS_ENV: test
     steps:
@@ -47,7 +46,9 @@ jobs:
         run: bin/rails assets:precompile
 
       - name: Create db and loads schema
-        run: bin/rails parallel:setup
+        run: |
+          cp config/database.yml.ci config/database.yml
+          bin/rails parallel:setup
 
       - name: Run RSpec
         run: bin/rails parallel:spec

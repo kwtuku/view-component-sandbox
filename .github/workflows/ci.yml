@@ -70,8 +70,10 @@ jobs:
 
       - name: Run Annotate
         env:
+          DATABASE_URL: postgres://postgres:password@localhost:5432/view_component_sandbox_test
           RAILS_ENV: development
         run: |
+          git checkout -- config/database.yml
           bin/rails annotate_models
           git diff --exit-code
         if: steps.run-rspec.outcome == 'success' || (failure() && steps.run-rspec.outcome == 'failure')

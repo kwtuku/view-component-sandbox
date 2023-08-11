@@ -20,10 +20,10 @@ jobs:
     env:
       RAILS_ENV: test
     steps:
-      # - name: Install fonts-noto-cjk
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install fonts-noto-cjk
+      - name: Install fonts-noto-cjk
+        run: |
+          sudo apt-get update
+          sudo apt-get install fonts-noto-cjk
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -70,6 +70,7 @@ jobs:
 
       - name: Run Annotate
         env:
+          DATABASE_URL: postgres://postgres:password@localhost:5432/view_component_sandbox_test
           RAILS_ENV: development
         run: |
           bin/rails annotate_models

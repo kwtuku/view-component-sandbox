@@ -16,12 +16,9 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_DB: rails_test
-          POSTGRES_USER: rails
           POSTGRES_PASSWORD: password
     env:
       RAILS_ENV: test
-      DATABASE_URL: postgres://rails:password@localhost:5432/rails_test
     steps:
       - name: Install fonts-noto-cjk
         run: |
@@ -48,11 +45,13 @@ jobs:
       - name: Build assets
         run: bin/rails assets:precompile
 
-      - name: Set up database schema
-        run: bin/rails db:schema:load
+      - name: Create db and loads schema
+        run: |
+          cp config/database.yml.ci config/database.yml
+          bin/rails parallel:setup
 
       - name: Run RSpec
-        run: bundle exec rspec
+        run: bin/rails parallel:spec
         id: run-rspec
 
       - name: Archive screenshots

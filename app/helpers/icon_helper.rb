@@ -1,5 +1,5 @@
 module IconHelper # rubocop:disable Metrics/ModuleLength
-  def dashboard_icon
+  def dashboard_icon # rubocop:disable Metrics/MethodLength
     <<~HTML.html_safe # rubocop:disable Rails/OutputSafety
       <svg
         aria-hidden="true"
@@ -14,7 +14,7 @@ module IconHelper # rubocop:disable Metrics/ModuleLength
     HTML
   end
 
-  def kanban_icon
+  def kanban_icon # rubocop:disable Metrics/MethodLength
     <<~HTML.html_safe # rubocop:disable Rails/OutputSafety
       <svg
         aria-hidden="true"
@@ -30,7 +30,7 @@ module IconHelper # rubocop:disable Metrics/ModuleLength
     HTML
   end
 
-  def inbox_icon
+  def inbox_icon # rubocop:disable Metrics/MethodLength
     <<~HTML.html_safe # rubocop:disable Rails/OutputSafety
       <svg
         aria-hidden="true"
@@ -49,7 +49,7 @@ module IconHelper # rubocop:disable Metrics/ModuleLength
     HTML
   end
 
-  def users_icon
+  def users_icon # rubocop:disable Metrics/MethodLength
     <<~HTML.html_safe # rubocop:disable Rails/OutputSafety
       <svg
         aria-hidden="true"
@@ -67,7 +67,7 @@ module IconHelper # rubocop:disable Metrics/ModuleLength
     HTML
   end
 
-  def products_icon
+  def products_icon # rubocop:disable Metrics/MethodLength
     <<~HTML.html_safe # rubocop:disable Rails/OutputSafety
       <svg
         aria-hidden="true"
@@ -85,7 +85,7 @@ module IconHelper # rubocop:disable Metrics/ModuleLength
     HTML
   end
 
-  def sign_in_icon
+  def sign_in_icon # rubocop:disable Metrics/MethodLength
     <<~HTML.html_safe # rubocop:disable Rails/OutputSafety
       <svg
         aria-hidden="true"
@@ -103,7 +103,7 @@ module IconHelper # rubocop:disable Metrics/ModuleLength
     HTML
   end
 
-  def sign_up_icon
+  def sign_up_icon # rubocop:disable Metrics/MethodLength
     <<~HTML.html_safe # rubocop:disable Rails/OutputSafety
       <svg
         aria-hidden="true"

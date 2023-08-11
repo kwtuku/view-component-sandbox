@@ -45,7 +45,7 @@ jobs:
       - name: Build assets
         run: bin/rails assets:precompile
 
-      - name: Set up database schema
+      - name: Create db and loads schema
         run: bin/rails parallel:setup
 
       - name: Run RSpec

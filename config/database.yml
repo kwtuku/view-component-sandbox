@@ -60,7 +60,7 @@ test:
   database: view_component_sandbox_test<%= ENV["TEST_ENV_NUMBER"] %>
   username: postgres
   password: password
-  host: localhost
+  # host: localhost
   # port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,

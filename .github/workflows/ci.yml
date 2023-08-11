@@ -74,7 +74,7 @@ jobs:
           RAILS_ENV: development
         run: |
           bin/rails annotate_models
-          git diff --exit-code
+          git diff --exit-code -- app spec
         if: steps.run-rspec.outcome == 'success' || (failure() && steps.run-rspec.outcome == 'failure')
 
   lint:

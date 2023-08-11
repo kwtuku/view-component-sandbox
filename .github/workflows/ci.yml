@@ -17,6 +17,7 @@ jobs:
           - 5432:5432
         env:
           POSTGRES_PASSWORD: password
+          POSTGRES_USER: runner
     env:
       RAILS_ENV: test
     steps:

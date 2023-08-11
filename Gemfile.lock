@@ -162,6 +162,8 @@ GEM
     octicons (19.5.0)
     orm_adapter (0.5.0)
     parallel (1.23.0)
+    parallel_tests (4.2.1)
+      parallel
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
@@ -328,6 +330,7 @@ DEPENDENCIES
   factory_bot_rails
   jsbundling-rails
   letter_opener_web
+  parallel_tests
   pg
   primer_view_components
   propshaft

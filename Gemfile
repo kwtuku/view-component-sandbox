@@ -32,6 +32,7 @@ group :development do
   gem "web-console"
 
   gem "annotate", require: false
+  gem "htmlbeautifier", require: false
   gem "bullet"
   gem "letter_opener_web"
   gem "rubocop", require: false

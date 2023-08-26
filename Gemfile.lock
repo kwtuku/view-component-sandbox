@@ -115,6 +115,7 @@ GEM
       railties (>= 5.0.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    htmlbeautifier (1.4.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -162,6 +163,8 @@ GEM
     octicons (19.5.0)
     orm_adapter (0.5.0)
     parallel (1.23.0)
+    parallel_tests (4.2.1)
+      parallel
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
@@ -326,8 +329,10 @@ DEPENDENCIES
   debug
   devise
   factory_bot_rails
+  htmlbeautifier
   jsbundling-rails
   letter_opener_web
+  parallel_tests
   pg
   primer_view_components
   propshaft

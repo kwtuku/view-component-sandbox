@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html class="<%= "h-full" if action_name.in? %w[_404 sign_in_form] %>">
+<html class="h-full bg-gray-100">
   <head>
     <title>ViewComponentSandbox</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="turbo-cache-control" content="no-cache">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="<%= "h-full" if action_name.in? %w[_404 sign_in_form] %>">
-    <% if action_name.in? %w[_404 category_filter sign_in_form store_navigation] %>
-      <%= yield %>
-    <% else %>
-      <div class="p-10">
-        <%= yield %>
-      </div>
-    <% end %>
+  <body class="h-full">
+    <!-- https://tailwindui.com/components/application-ui/application-shells/stacked -->
+
+    <!--
+      This example requires updating your template:
+
+      ```
+      <html class="h-full bg-gray-100">
+      <body class="h-full">
+      ```
+    -->
+    <div class="min-h-full">
+      <%= render Tailwindui::NavbarComponent.new %>
+      <header class="bg-white shadow">
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+        </div>
+      </header>
+      <main>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

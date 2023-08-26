@@ -24,6 +24,7 @@ group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 
   gem "factory_bot_rails"
+  gem "parallel_tests"
   gem "rspec-rails"
 end
 
@@ -32,6 +33,7 @@ group :development do
 
   gem "annotate", require: false
   gem "bullet"
+  gem "htmlbeautifier", require: false
   gem "letter_opener_web"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false

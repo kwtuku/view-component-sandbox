@@ -1,0 +1,8 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: view_component_sandbox_test<%= ENV["TEST_ENV_NUMBER"] %>
+  username: postgres
+  password: password
+  host: localhost

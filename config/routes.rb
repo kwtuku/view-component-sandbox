@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root "home#index"
 
+  namespace :primer do
+    resources :repositories
+  end
+
   scope :tailwindui do
     Tailwindui::Example.names.each do |name|
       get name, to: "tailwindui##{name}"

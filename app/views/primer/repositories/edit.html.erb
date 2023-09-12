@@ -1,0 +1,10 @@
+<h1>Editing repository</h1>
+
+<%= render "form", repository: @repository %>
+
+<br>
+
+<div>
+  <%= link_to "Show this repository", primer_repository_path(@repository) %> |
+  <%= link_to "Back to repositories", primer_repositories_path %>
+</div>

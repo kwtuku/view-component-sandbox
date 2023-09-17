@@ -2,13 +2,10 @@
 
 <h1>Repositories</h1>
 
-<div id="repositories">
+<%= render Primer::Box.new(id: "repositories", py: 3) do |component| %>
   <% @repositories.each do |repository| %>
     <%= render repository %>
-    <p>
-      <%= link_to "Show this repository", primer_repository_path(repository) %>
-    </p>
   <% end %>
-</div>
+<% end %>
 
 <%= link_to "New repository", new_primer_repository_path %>

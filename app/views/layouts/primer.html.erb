@@ -6,7 +6,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="turbo-cache-control" content="no-cache">
+    <% # FIXME: 消すと Label のスタイルがなくなる %>
     <link href="https://unpkg.com/@primer/css@^21.0.7/dist/primer.css" rel="stylesheet" data-turbo-track="reload" />
+    <% # FIXME: 消すと Button のスタイルがなくなる %>
+    <%= stylesheet_link_tag "primer_view_components", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "primer_view_components", "application", "data-turbo-track": "reload", defer: true %>
   </head>
 

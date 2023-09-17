@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Repositories</h1>
+
+<%= render Primer::Box.new(id: "repositories", py: 3) do |component| %>
+  <% @repositories.each do |repository| %>
+    <%= render repository %>
+  <% end %>
+<% end %>
+
+<%= link_to "New repository", new_primer_repository_path %>

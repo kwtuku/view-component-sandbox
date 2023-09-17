@@ -1,3 +1,5 @@
-class Primer::ApplicationController < ApplicationController
-  layout "primer"
+module Primer
+  class ApplicationController < ApplicationController
+    layout "primer"
+  end
 end

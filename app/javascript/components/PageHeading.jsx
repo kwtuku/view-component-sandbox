@@ -1,6 +1,6 @@
 // https://tailwindui.com/components/application-ui/headings/page-headings
 
-import React, { Fragment } from "react"
+import { Fragment } from "react"
 import {
   BriefcaseIcon,
   CalendarIcon,

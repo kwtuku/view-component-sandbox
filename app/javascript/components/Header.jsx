@@ -1,6 +1,6 @@
 // https://tailwindui.com/components/marketing/elements/headers
 
-import React, { Fragment, useState } from "react"
+import { Fragment, useState } from "react"
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react"
 import {
   ArrowPathIcon,

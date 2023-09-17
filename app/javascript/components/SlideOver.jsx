@@ -1,6 +1,6 @@
 // https://tailwindui.com/components/application-ui/overlays/slide-overs
 
-import React, { Fragment, useState } from "react"
+import { Fragment, useState } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 

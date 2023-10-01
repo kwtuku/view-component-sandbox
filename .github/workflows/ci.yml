@@ -104,7 +104,7 @@ jobs:
         id: run-rubocop
 
       - name: Run ESLint
-        run: yarn run eslint app/javascript
+        run: yarn run eslint app/javascript/**/*.{js,jsx}
         if: steps.run-rubocop.outcome == 'success' || (failure() && steps.run-rubocop.outcome == 'failure')
 
       - name: Run Prettier

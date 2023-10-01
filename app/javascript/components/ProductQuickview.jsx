@@ -1,5 +1,3 @@
-// https://tailwindui.com/components/ecommerce/components/product-quickviews
-
 /*
   This example requires some changes to your config:
 
@@ -14,7 +12,7 @@
   }
   ```
 */
-import React, { Fragment, useState } from "react"
+import { Fragment, useState } from "react"
 import { Dialog, RadioGroup, Transition } from "@headlessui/react"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 import { StarIcon } from "@heroicons/react/20/solid"
@@ -49,7 +47,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-function ProductQuickview() {
+export default function Example() {
   const [open, setOpen] = useState(false)
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [selectedSize, setSelectedSize] = useState(product.sizes[2])
@@ -340,5 +338,3 @@ function ProductQuickview() {
     </div>
   )
 }
-
-export default ProductQuickview

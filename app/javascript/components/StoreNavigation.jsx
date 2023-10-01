@@ -1,5 +1,3 @@
-// https://tailwindui.com/components/ecommerce/components/store-navigation
-
 /*
   This example requires some changes to your config:
 
@@ -14,7 +12,7 @@
   }
   ```
 */
-import React, { Fragment, useState } from "react"
+import { Fragment, useState } from "react"
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react"
 import {
   Bars3Icon,
@@ -157,7 +155,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-function StoreNavigation() {
+export default function Example() {
   const [open, setOpen] = useState(false)
 
   return (
@@ -563,5 +561,3 @@ function StoreNavigation() {
     </div>
   )
 }
-
-export default StoreNavigation

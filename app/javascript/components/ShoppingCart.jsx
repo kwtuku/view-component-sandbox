@@ -1,5 +1,3 @@
-// https://tailwindui.com/components/ecommerce/components/shopping-carts
-
 import { Fragment, useState } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { XMarkIcon } from "@heroicons/react/24/outline"
@@ -32,7 +30,7 @@ const products = [
   // More products...
 ]
 
-function ShoppingCart() {
+export default function Example() {
   const [open, setOpen] = useState(true)
 
   function closeModal() {
@@ -179,5 +177,3 @@ function ShoppingCart() {
     </Transition.Root>
   )
 }
-
-export default ShoppingCart

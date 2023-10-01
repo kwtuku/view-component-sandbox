@@ -1,5 +1,3 @@
-// https://tailwindui.com/components/ecommerce/components/category-filters
-
 /*
   This example requires some changes to your config:
 
@@ -81,7 +79,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-function CategoryFilter() {
+export default function Example() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   return (
@@ -369,5 +367,3 @@ function CategoryFilter() {
     </div>
   )
 }
-
-export default CategoryFilter

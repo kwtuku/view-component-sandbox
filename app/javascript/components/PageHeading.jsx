@@ -1,5 +1,3 @@
-// https://tailwindui.com/components/application-ui/headings/page-headings
-
 import { Fragment } from "react"
 import {
   BriefcaseIcon,

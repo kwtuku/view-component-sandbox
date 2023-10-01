@@ -1,5 +1,3 @@
-// https://tailwindui.com/components/ecommerce/components/product-overviews
-
 /*
   This example requires some changes to your config:
 
@@ -83,7 +81,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-function ProductOverview() {
+export default function Example() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [selectedSize, setSelectedSize] = useState(product.sizes[2])
 
@@ -376,5 +374,3 @@ function ProductOverview() {
     </div>
   )
 }
-
-export default ProductOverview

@@ -1,5 +1,3 @@
-// https://tailwindui.com/components/marketing/elements/flyout-menus
-
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import {

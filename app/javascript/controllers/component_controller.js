@@ -6,7 +6,7 @@ import Hello from "../components/Hello"
 import Hi from "../components/Hi"
 import CategoryFilter from "../components/CategoryFilter"
 import ContactSection from "../components/ContactSection"
-import Dropdown from "../components/Dropdown"
+import DropdownSimple from "../components/DropdownSimple"
 import DropdownWithDividers from "../components/DropdownWithDividers"
 import FlyoutMenu from "../components/FlyoutMenu"
 import Header from "../components/Header"
@@ -19,6 +19,7 @@ import ProductQuickview from "../components/ProductQuickview"
 import SelectMenu from "../components/SelectMenu"
 import ShoppingCart from "../components/ShoppingCart"
 import SlideOver from "../components/SlideOver"
+import StackedLayout from "../components/StackedLayout"
 import StoreNavigation from "../components/StoreNavigation"
 
 export default class extends Controller {
@@ -30,7 +31,7 @@ export default class extends Controller {
       Hi: Hi,
       CategoryFilter: CategoryFilter,
       ContactSection: ContactSection,
-      Dropdown: Dropdown,
+      DropdownSimple: DropdownSimple,
       DropdownWithDividers: DropdownWithDividers,
       FlyoutMenu: FlyoutMenu,
       Header: Header,
@@ -43,6 +44,7 @@ export default class extends Controller {
       SelectMenu: SelectMenu,
       ShoppingCart: ShoppingCart,
       SlideOver: SlideOver,
+      StackedLayout: StackedLayout,
       StoreNavigation: StoreNavigation,
     }
   }

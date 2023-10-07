@@ -44,7 +44,7 @@ end
 
 group :test do
   gem "capybara"
-  gem "selenium-webdriver"
+  gem "selenium-webdriver", "4.13.0" # https://github.com/SeleniumHQ/selenium/issues/12884
 
   gem "simplecov", require: false
 end

@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
-gem "rails", "7.0.7"
+gem "rails", "7.0.8"
 
 gem "bootsnap", require: false
 gem "cssbundling-rails"
@@ -44,7 +44,7 @@ end
 
 group :test do
   gem "capybara"
-  gem "selenium-webdriver"
+  gem "selenium-webdriver", "4.13.0" # https://github.com/SeleniumHQ/selenium/issues/12884
 
   gem "simplecov", require: false
 end

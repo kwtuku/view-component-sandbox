@@ -17,6 +17,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 gem "devise"
+gem "haml-rails"
 gem "primer_view_components"
 gem "view_component"
 
@@ -33,6 +34,7 @@ group :development do
 
   gem "annotate", require: false
   gem "bullet"
+  gem "html2haml", require: false
   gem "htmlbeautifier", require: false
   gem "letter_opener_web"
   gem "rubocop", require: false

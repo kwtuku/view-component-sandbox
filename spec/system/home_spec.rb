@@ -12,4 +12,14 @@ RSpec.describe "トップページ" do
 
     expect(page).to have_content "Hello React!"
   end
+
+  it "tippy.js のドロップダウンが動く" do
+    visit root_path
+
+    within '[data-testid="tippy-dropdown"]' do
+      expect(page).not_to have_content "Neil Sims"
+      click_button "Open user menu"
+      expect(page).to have_content "Neil Sims"
+    end
+  end
 end

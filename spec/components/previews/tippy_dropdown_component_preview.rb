@@ -1,5 +1,5 @@
 class TippyDropdownComponentPreview < ViewComponent::Preview
-  layout "flowbite"
+  layout "component_preview"
 
   def default
     render(TippyDropdownComponent.new)

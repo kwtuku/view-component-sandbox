@@ -41,6 +41,9 @@ module ViewComponentSandbox
     config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
 
     config.view_component.preview_paths << "#{Rails.root}/spec/components/previews"
+
+    # haml-rails を入れているので明示
+    config.app_generators.template_engine :erb
   end
 end
 

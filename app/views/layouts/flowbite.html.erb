@@ -12,6 +12,7 @@
 
   <body>
     <!-- https://flowbite.com/docs/components/sidebar/#sidebar-with-navbar -->
+    <!-- ナブバーは z-20、サイドバーは z-10 -->
     <%= render NavbarComponent.new %>
     <%= render SidebarComponent.new %>
 
@@ -28,6 +29,21 @@
           <%= alert %>
         </div>
       <% end %>
+      <div class="p-5" data-testid="tippy-dropdown">
+        <%= render TippyDropdownComponent.new %>
+      </div>
+      <div class="p-5">
+        <%= render AlertComponent.new %>
+      </div>
+      <div class="p-5">
+        <%= render DropdownComponent.new %>
+      </div>
+      <div class="p-5">
+        <%= render ModalComponent.new %>
+      </div>
+      <div class="p-5">
+        <%= render ToggleComponent.new %>
+      </div>
       <%= yield %>
     </div>
   </body>

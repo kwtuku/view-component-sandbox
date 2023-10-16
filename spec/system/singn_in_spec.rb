@@ -43,6 +43,7 @@ RSpec.describe "ログイン" do
     it "フラッシュメッセージが表示される" do
       sign_in user
       visit root_path
+      find('[data-action="alert#close"]').click
       click_button "ログアウト"
 
       expect(page).to have_content "ログアウトしました。"

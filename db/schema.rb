@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_19_143213) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_19_151324) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -28,6 +28,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_19_143213) do
     t.boolean "my_boolean", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "my_pg_models", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "my_model_id", null: false
+    t.binary "my_binary", null: false
+    t.string "my_string_array", null: false, array: true
+    t.text "my_text_array", null: false, array: true
+    t.integer "my_integer_array", null: false, array: true
+    t.json "my_json", null: false
+    t.jsonb "my_jsonb", null: false
+    t.daterange "my_daterange", null: false
+    t.uuid "my_uuid", null: false
+    t.interval "my_interval", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["my_model_id"], name: "index_my_pg_models_on_my_model_id"
   end
 
   create_table "repositories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -66,5 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_19_143213) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "my_pg_models", "my_models"
   add_foreign_key "repositories", "users"
 end

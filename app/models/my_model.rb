@@ -17,6 +17,8 @@
 #  updated_at  :datetime         not null
 #
 class MyModel < ApplicationRecord
+  has_many :my_pg_models, dependent: :destroy
+
   validates :my_string, presence: true
   validates :my_text, presence: true
   validates :my_integer, presence: true

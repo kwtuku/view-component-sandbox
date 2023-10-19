@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :my_models
+  resources :my_pg_models
 
   namespace :primer do
     resources :repositories

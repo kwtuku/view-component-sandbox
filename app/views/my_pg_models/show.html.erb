@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render "my_pg_model", my_pg_model: @my_pg_model %>
+
+<div>
+  <%= link_to "Edit this my pg model", edit_my_pg_model_path(@my_pg_model) %> |
+  <%= link_to "Back to my pg models", my_pg_models_path %>
+
+  <%= button_to "Destroy this my pg model", @my_pg_model, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+</div>

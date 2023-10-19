@@ -1,0 +1,67 @@
+<%= form_with(model: my_pg_model) do |form| %>
+  <% if my_pg_model.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(my_pg_model.errors.count, "error") %> prohibited this my_pg_model from being saved:</h2>
+
+      <ul>
+        <% my_pg_model.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :my_model_id, style: "display: block" %>
+    <%= form.select :my_model_id, MyModel.all.collect { |my_model| [my_model.my_string, my_model.id] }, include_blank: true %>
+  </div>
+
+  <div>
+    <%= form.label :my_binary, style: "display: block" %>
+    <%= form.text_field :my_binary %>
+  </div>
+
+  <div>
+    <%= form.label :my_string_array, style: "display: block" %>
+    <%= form.text_field :my_string_array %>
+  </div>
+
+  <div>
+    <%= form.label :my_text_array, style: "display: block" %>
+    <%= form.text_area :my_text_array %>
+  </div>
+
+  <div>
+    <%= form.label :my_integer_array, style: "display: block" %>
+    <%= form.text_field :my_integer_array %>
+  </div>
+
+  <div>
+    <%= form.label :my_json, style: "display: block" %>
+    <%= form.text_field :my_json %>
+  </div>
+
+  <div>
+    <%= form.label :my_jsonb, style: "display: block" %>
+    <%= form.text_field :my_jsonb %>
+  </div>
+
+  <div>
+    <%= form.label :my_daterange, style: "display: block" %>
+    <%= form.text_field :my_daterange %>
+  </div>
+
+  <div>
+    <%= form.label :my_uuid, style: "display: block" %>
+    <%= form.text_field :my_uuid %>
+  </div>
+
+  <div>
+    <%= form.label :my_interval, style: "display: block" %>
+    <%= form.number_field :my_interval %>
+  </div>
+
+  <div>
+    <%= form.button %>
+  </div>
+<% end %>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "home#index"
 
+  resources :my_models
+
   namespace :primer do
     resources :repositories
   end

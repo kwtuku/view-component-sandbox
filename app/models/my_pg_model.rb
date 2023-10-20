@@ -46,7 +46,7 @@ class MyPgModel < ApplicationRecord
   end
 
   def my_string_array
-    super.join(", ")
+    super&.join(", ")
   end
 
   def my_text_array=(value)
@@ -58,7 +58,7 @@ class MyPgModel < ApplicationRecord
   end
 
   def my_text_array
-    super.join("\n")
+    super&.join("\n")
   end
 
   def my_integer_array=(value)
@@ -70,7 +70,7 @@ class MyPgModel < ApplicationRecord
   end
 
   def my_integer_array
-    super.join(", ")
+    super&.join(", ")
   end
 
   def my_interval=(value)

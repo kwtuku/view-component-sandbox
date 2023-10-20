@@ -37,11 +37,11 @@ class MyPgModel < ApplicationRecord
   validates :my_uuid, presence: true
   validates :my_interval, presence: true
 
-  def my_string_array=(val)
-    if val.is_a?(Array)
+  def my_string_array=(value)
+    if value.is_a?(Array)
       super
     else
-      super(val.split(",").map(&:strip).compact_blank)
+      super(value.split(",").map(&:strip).compact_blank)
     end
   end
 
@@ -49,11 +49,11 @@ class MyPgModel < ApplicationRecord
     super.join(", ")
   end
 
-  def my_text_array=(val)
-    if val.is_a?(Array)
+  def my_text_array=(value)
+    if value.is_a?(Array)
       super
     else
-      super(val.split(/\R/).map(&:strip).compact_blank)
+      super(value.split(/\R/).map(&:strip).compact_blank)
     end
   end
 
@@ -61,11 +61,11 @@ class MyPgModel < ApplicationRecord
     super.join("\n")
   end
 
-  def my_integer_array=(val)
-    if val.is_a?(Array)
+  def my_integer_array=(value)
+    if value.is_a?(Array)
       super
     else
-      super(val.split(",").map(&:strip).compact_blank.map(&:to_i))
+      super(value.split(",").map(&:strip).compact_blank.map(&:to_i))
     end
   end
 
@@ -73,7 +73,7 @@ class MyPgModel < ApplicationRecord
     super.join(", ")
   end
 
-  def my_interval=(val)
-    super(ActiveSupport::Duration.build(val.to_i))
+  def my_interval=(value)
+    super(ActiveSupport::Duration.build(value.to_i))
   end
 end

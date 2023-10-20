@@ -45,6 +45,10 @@ class MyPgModel < ApplicationRecord
     end
   end
 
+  def my_string_array
+    super.join(", ")
+  end
+
   def my_text_array=(val)
     if val.is_a?(Array)
       super
@@ -53,11 +57,19 @@ class MyPgModel < ApplicationRecord
     end
   end
 
+  def my_text_array
+    super.join("\n")
+  end
+
   def my_integer_array=(val)
     if val.is_a?(Array)
       super
     else
       super(val.split(",").map(&:strip).compact_blank.map(&:to_i))
     end
+  end
+
+  def my_integer_array
+    super.join(", ")
   end
 end

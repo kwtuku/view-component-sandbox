@@ -72,4 +72,8 @@ class MyPgModel < ApplicationRecord
   def my_integer_array
     super.join(", ")
   end
+
+  def my_interval=(val)
+    super(ActiveSupport::Duration.build(val.to_i))
+  end
 end

@@ -73,6 +73,26 @@ class MyPgModel < ApplicationRecord
     super&.join(", ")
   end
 
+  def my_daterange_start_on=(value)
+    ActiveModel::Type::Date.new.cast(value).tap do |start_on|
+      self.my_daterange = Range.new(start_on, my_daterange&.max)
+    end
+  end
+
+  def my_daterange_start_on
+    my_daterange&.begin
+  end
+
+  def my_daterange_end_on=(value)
+    ActiveModel::Type::Date.new.cast(value).tap do |end_on|
+      self.my_daterange = Range.new(my_daterange&.begin, end_on)
+    end
+  end
+
+  def my_daterange_end_on
+    my_daterange&.max
+  end
+
   def my_interval=(value)
     super(ActiveSupport::Duration.build(value.to_i))
   end

@@ -15,7 +15,7 @@ class MyPgModelsController < ApplicationController
   def edit; end
 
   def create
-    @my_pg_model = MyPgModel.new(my_pg_model_params.merge(my_daterange: Date.current.all_day))
+    @my_pg_model = MyPgModel.new(my_pg_model_params)
 
     if @my_pg_model.save
       redirect_to my_pg_model_path(@my_pg_model), notice: t("flash.created", model: MyPgModel.model_name.human)
@@ -25,7 +25,7 @@ class MyPgModelsController < ApplicationController
   end
 
   def update
-    if @my_pg_model.update(my_pg_model_params.merge(my_daterange: Date.current.all_day))
+    if @my_pg_model.update(my_pg_model_params)
       redirect_to my_pg_model_path(@my_pg_model), notice: t("flash.updated", model: MyPgModel.model_name.human), status: :see_other
     else
       render :edit, status: :unprocessable_entity
@@ -45,7 +45,8 @@ class MyPgModelsController < ApplicationController
 
   def my_pg_model_params
     params.require(:my_pg_model).permit(
-      :my_model_id, :my_binary, :my_string_array, :my_text_array, :my_integer_array, :my_json, :my_jsonb, :my_daterange, :my_uuid, :my_interval,
+      :my_model_id, :my_binary, :my_string_array, :my_text_array, :my_integer_array, :my_json, :my_jsonb, :my_daterange_start_on, :my_daterange_end_on,
+      :my_uuid, :my_interval,
     )
   end
 end

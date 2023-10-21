@@ -47,8 +47,13 @@
   </div>
 
   <div>
-    <%= form.label :my_daterange, style: "display: block" %>
-    <%= form.text_field :my_daterange %>
+    <%= form.label :my_daterange_start_on, style: "display: block" %>
+    <%= form.date_field :my_daterange_start_on %>
+  </div>
+
+  <div>
+    <%= form.label :my_daterange_end_on, style: "display: block" %>
+    <%= form.date_field :my_daterange_end_on %>
   </div>
 
   <div>

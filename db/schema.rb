@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_19_151324) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_23_131233) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "ancestry_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "my_string", null: false
+    t.string "ancestry", null: false, collation: "C"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_ancestry_items_on_ancestry"
+  end
 
   create_table "my_models", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "my_string", null: false

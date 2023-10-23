@@ -1,0 +1,20 @@
+<table class="border-collapse w-full border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
+  <thead class="bg-slate-50 dark:bg-slate-700">
+    <tr>
+      <th class="w-3/8 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">my_string</th>
+      <th class="w-3/8 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">parent_id</th>
+      <th class="w-1/8 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">lft</th>
+      <th class="w-1/8 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">rgt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @nested_set_items.each do |nested_set_item| %>
+      <tr>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= nested_set_item.my_string %></td>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= nested_set_item.parent_id %></td>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= nested_set_item.lft %></td>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= nested_set_item.rgt %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

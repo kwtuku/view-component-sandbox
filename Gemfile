@@ -17,6 +17,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 gem "ancestry"
+gem "awesome_nested_set"
 gem "devise"
 gem "haml-rails"
 gem "primer_view_components"

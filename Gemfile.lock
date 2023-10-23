@@ -74,6 +74,8 @@ GEM
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
+    awesome_nested_set (3.6.0)
+      activerecord (>= 4.0.0, < 7.2)
     base64 (0.1.1)
     bcrypt (3.1.19)
     bindex (0.8.1)
@@ -354,6 +356,7 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   annotate
+  awesome_nested_set
   bootsnap
   bullet
   capybara

@@ -1,0 +1,67 @@
+<%= form_with(model: my_model) do |form| %>
+  <% if my_model.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(my_model.errors.count, "error") %> prohibited this my_model from being saved:</h2>
+
+      <ul>
+        <% my_model.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :my_string, style: "display: block" %>
+    <%= form.text_field :my_string %>
+  </div>
+
+  <div>
+    <%= form.label :my_text, style: "display: block" %>
+    <%= form.text_area :my_text %>
+  </div>
+
+  <div>
+    <%= form.label :my_integer, style: "display: block" %>
+    <%= form.number_field :my_integer %>
+  </div>
+
+  <div>
+    <%= form.label :my_bigint, style: "display: block" %>
+    <%= form.text_field :my_bigint %>
+  </div>
+
+  <div>
+    <%= form.label :my_float, style: "display: block" %>
+    <%= form.text_field :my_float %>
+  </div>
+
+  <div>
+    <%= form.label :my_decimal, style: "display: block" %>
+    <%= form.text_field :my_decimal %>
+  </div>
+
+  <div>
+    <%= form.label :my_datetime, style: "display: block" %>
+    <%= form.datetime_field :my_datetime %>
+  </div>
+
+  <div>
+    <%= form.label :my_time, style: "display: block" %>
+    <%= form.time_field :my_time %>
+  </div>
+
+  <div>
+    <%= form.label :my_date, style: "display: block" %>
+    <%= form.date_field :my_date %>
+  </div>
+
+  <div>
+    <%= form.label :my_boolean, style: "display: block" %>
+    <%= form.check_box :my_boolean %>
+  </div>
+
+  <div>
+    <%= form.button %>
+  </div>
+<% end %>

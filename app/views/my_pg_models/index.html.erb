@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>My pg models</h1>
+
+<div id="my_pg_models">
+  <% @my_pg_models.each do |my_pg_model| %>
+    <%= render "my_pg_model", my_pg_model: my_pg_model %>
+    <p>
+      <%= link_to "Show this my pg model", my_pg_model_path(my_pg_model) %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New my pg model", new_my_pg_model_path %>

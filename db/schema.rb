@@ -18,6 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_23_134942) do
   create_table "ancestry_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "my_string", null: false
     t.string "ancestry", null: false, collation: "C"
+    t.integer "ancestry_depth", default: 0, null: false
+    t.integer "children_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_ancestry_items_on_ancestry"

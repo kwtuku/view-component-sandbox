@@ -5,6 +5,8 @@ class CreateNestedSetItems < ActiveRecord::Migration[7.0]
       t.references :parent, foreign_key: { to_table: :nested_set_items }, type: :uuid
       t.integer :lft, null: false
       t.integer :rgt, null: false
+      t.integer :depth, null: false, default: 0
+      t.integer :children_count, null: false, default: 0
 
       t.index :lft
       t.index :rgt

@@ -61,6 +61,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_23_134942) do
     t.uuid "parent_id"
     t.integer "lft", null: false
     t.integer "rgt", null: false
+    t.integer "depth", default: 0, null: false
+    t.integer "children_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lft"], name: "index_nested_set_items_on_lft"

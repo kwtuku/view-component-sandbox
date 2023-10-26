@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_19_151324) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_23_134942) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "ancestry_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "my_string", null: false
+    t.string "ancestry", null: false, collation: "C"
+    t.integer "ancestry_depth", default: 0, null: false
+    t.integer "children_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_ancestry_items_on_ancestry"
+  end
 
   create_table "my_models", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "my_string", null: false
@@ -44,6 +54,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_19_151324) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["my_model_id"], name: "index_my_pg_models_on_my_model_id"
+  end
+
+  create_table "nested_set_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "my_string", null: false
+    t.uuid "parent_id"
+    t.integer "lft", null: false
+    t.integer "rgt", null: false
+    t.integer "depth", default: 0, null: false
+    t.integer "children_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lft"], name: "index_nested_set_items_on_lft"
+    t.index ["parent_id"], name: "index_nested_set_items_on_parent_id"
+    t.index ["rgt"], name: "index_nested_set_items_on_rgt"
   end
 
   create_table "repositories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -83,5 +107,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_19_151324) do
   end
 
   add_foreign_key "my_pg_models", "my_models"
+  add_foreign_key "nested_set_items", "nested_set_items", column: "parent_id"
   add_foreign_key "repositories", "users"
 end

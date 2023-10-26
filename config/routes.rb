@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :my_models
   resources :my_pg_models
 
+  resources :ancestry_items, only: %i[index]
+  resources :nested_set_items, only: %i[index]
+
   namespace :primer do
     resources :repositories
   end

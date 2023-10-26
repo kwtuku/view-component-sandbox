@@ -1,10 +1,11 @@
 <ul>
   <% @items.each do |item| %>
-    <% if item.has_children? %>
+    <% children = item.children %>
+    <% if children.present? %>
       <li class="<%= "ml-4 " if @is_children %>px-2">
         <details>
           <summary class="hover:bg-slate-100"><%= item.my_string %></summary>
-          <%= render AncestryItemTreeComponent.new(items: item.children, is_children: true) %>
+          <%= render AncestryItemTreeComponent.new(items: children, is_children: true) %>
         </details>
       </li>
     <% else %>

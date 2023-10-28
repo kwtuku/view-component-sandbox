@@ -7,15 +7,15 @@ regexps:
     regexp: '^(?![^=]*(?: {|[(;]))(?<before>\s*[a-z0-9_#-]*)(?<classes>(?:\.[a-z0-9_:\/-]+){2,})'
     file_extension: .slim
     class_prefix: .
-    class_splitter: ''
+    class_splitter: ""
   ruby_class_attribute:
     # regexp for the class attribute in ruby helpers in Slim:
     #   - before: the `class: "` attribute with quotation
     #   - classes: at least 2 classes joined by space(s)
     regexp: '(?<before>class: ")(?<classes>(?: *[a-z0-9_:\/-]+){2,})'
     file_extension: .slim
-    class_prefix: ''
-    class_splitter: ' '
+    class_prefix: ""
+    class_splitter: " "
 variants_order:
   - custom # this is a special variant so that only custom variants have index 0
   - sm

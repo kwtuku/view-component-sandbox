@@ -44,6 +44,7 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
   gem "rufo", require: false
+  gem "tailwind-sorter", require: false
 end
 
 group :test do

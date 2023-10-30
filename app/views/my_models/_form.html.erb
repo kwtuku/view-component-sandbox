@@ -109,6 +109,13 @@
         </div>
 
         <div class="col-span-full">
+          <%= form.label :my_multiple_select_attribute, class: "block text-sm font-medium leading-6 text-gray-900" %>
+          <div class="mt-2">
+            <%= form.collection_select :my_multiple_select_attribute, MyModel.my_multiple_select_attributes, :first, :first, {}, { multiple: true, data: { controller: "multiple-select" } } %>
+          </div>
+        </div>
+
+        <div class="col-span-full">
           <fieldset>
             <legend class="text-sm font-semibold leading-6 text-gray-900"><%= MyModel.human_attribute_name(:my_radio_button_attribute) %></legend>
             <p class="mt-1 text-sm leading-6 text-gray-600">These are delivered via SMS to your mobile phone.</p>

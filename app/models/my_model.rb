@@ -23,6 +23,9 @@ class MyModel < ApplicationRecord
   attribute :my_select_attribute, :integer
   enum :my_select_attribute, { ant: 0, bat: 1, cat: 2, dog: 3, eagle: 4, fish: 5 }
 
+  attribute :my_multiple_select_attribute, :integer
+  enum :my_multiple_select_attribute, { ruby: 0, javascript: 1, typescript: 2, python: 3, php: 4 }
+
   has_many :my_pg_models, dependent: :destroy
 
   validates :my_string, presence: true

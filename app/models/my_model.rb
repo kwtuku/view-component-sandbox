@@ -17,6 +17,12 @@
 #  updated_at  :datetime         not null
 #
 class MyModel < ApplicationRecord
+  attribute :my_radio_button_attribute, :integer
+  enum :my_radio_button_attribute, { apple: 0, banana: 1, cherry: 2 }
+
+  attribute :my_select_attribute, :integer
+  enum :my_select_attribute, { ant: 0, bat: 1, cat: 2, dog: 3, eagle: 4, fish: 5 }
+
   has_many :my_pg_models, dependent: :destroy
 
   validates :my_string, presence: true

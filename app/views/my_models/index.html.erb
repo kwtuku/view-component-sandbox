@@ -47,6 +47,7 @@
             <td class="border border-slate-300 p-4 text-slate-500">
               <div class="flex items-center justify-center gap-x-4">
                 <%= link_to "Show", my_model_path(my_model), class: "font-medium text-indigo-600 hover:text-indigo-500" %>
+                <%= link_to "Edit", edit_my_model_path(my_model), class: "font-medium text-indigo-600 hover:text-indigo-500" %>
                 <%= button_to "Destroy", my_model_path(my_model), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "font-medium text-indigo-600 hover:text-indigo-500" %>
               </div>
             </td>

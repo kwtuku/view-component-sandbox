@@ -54,6 +54,7 @@ jobs:
       - name: Run RSpec
         run: bin/rails parallel:spec
         id: run-rspec
+        continue-on-error: true
 
       - name: Archive screenshots
         uses: actions/upload-artifact@v3

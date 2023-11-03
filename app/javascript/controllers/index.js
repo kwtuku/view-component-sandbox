@@ -10,5 +10,8 @@ application.register("component", ComponentController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import MultipleSelectController from "./multiple_select_controller"
+application.register("multiple-select", MultipleSelectController)
+
 import TippyDropdownController from "./tippy_dropdown_controller"
 application.register("tippy-dropdown", TippyDropdownController)

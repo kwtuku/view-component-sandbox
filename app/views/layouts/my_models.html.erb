@@ -11,6 +11,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if ActiveRecord::Type::Boolean.new.cast(params[:navbar]) %>
+      <%= render PageCornerRibbonComponent.new %>
+      <%= render NavbarComponent.new %>
+      <%= render SidebarComponent.new %>
+      <div class="mt-14 p-4 sm:ml-64">
+        <%= yield %>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

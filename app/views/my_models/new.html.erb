@@ -1,9 +1,3 @@
-<h1>New my model</h1>
-
-<%= render "form", my_model: @my_model %>
-
-<br>
-
-<div>
-  <%= link_to "Back to my models", my_models_path %>
+<div class="sm:mx-auto sm:max-w-2xl">
+  <%= render "form", my_model: @my_model, title: "New my model", cancel_path: my_models_path %>
 </div>

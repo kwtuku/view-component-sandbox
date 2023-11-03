@@ -44,40 +44,19 @@
           class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0"
         >
           <li>
-            <a
-              href="#"
-              class="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-700"
-              aria-current="page"
-              >Home</a
-            >
+            <%= link_to "Home", root_path, "aria-current": "page", class: "block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-700" %>
           </li>
           <li>
-            <a
-              href="#"
-              class="block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-              >About</a
-            >
+            <%= link_to MyModel.model_name.human, my_models_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
           </li>
           <li>
-            <a
-              href="#"
-              class="block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-              >Services</a
-            >
+            <%= link_to MyPgModel.model_name.human, my_pg_models_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
           </li>
           <li>
-            <a
-              href="#"
-              class="block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-              >Pricing</a
-            >
+            <%= link_to AncestryItem.model_name.human, ancestry_items_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
           </li>
           <li>
-            <a
-              href="#"
-              class="block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-              >Contact</a
-            >
+            <%= link_to NestedSetItem.model_name.human, nested_set_items_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
           </li>
           <% if helpers.user_signed_in? %>
             <li>

@@ -1,0 +1,5 @@
+eval_gemfile File.expand_path("../Gemfile", __dir__)
+
+dependencies.delete_if { |d| d.name == "rails" }
+
+gem "rails", branch: "main", github: "rails/rails"

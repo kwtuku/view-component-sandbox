@@ -3,3 +3,9 @@
 @import "tailwindcss/utilities";
 
 @import "choices.js/public/assets/styles/choices.min.css";
+
+@layer components {
+  .sortable-chosen {
+    @apply bg-slate-200;
+  }
+}

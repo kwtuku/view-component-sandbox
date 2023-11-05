@@ -13,5 +13,8 @@ application.register("hello", HelloController)
 import MultipleSelectController from "./multiple_select_controller"
 application.register("multiple-select", MultipleSelectController)
 
+import SortableListController from "./sortable_list_controller"
+application.register("sortable-list", SortableListController)
+
 import TippyDropdownController from "./tippy_dropdown_controller"
 application.register("tippy-dropdown", TippyDropdownController)

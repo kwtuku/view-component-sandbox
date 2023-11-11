@@ -40,6 +40,7 @@ group :development do
   gem "bullet"
   gem "html2haml", require: false
   gem "htmlbeautifier", require: false
+  gem "lefthook"
   gem "letter_opener_web"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false

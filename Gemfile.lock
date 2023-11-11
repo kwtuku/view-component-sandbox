@@ -148,6 +148,7 @@ GEM
     language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
+    lefthook (1.5.2)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
     letter_opener_web (2.0.0)
@@ -372,6 +373,7 @@ DEPENDENCIES
   html2haml
   htmlbeautifier
   jsbundling-rails
+  lefthook
   letter_opener_web
   parallel_tests
   pg

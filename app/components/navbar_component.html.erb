@@ -59,10 +59,10 @@
             <%= link_to NestedSetItem.model_name.human, nested_set_items_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
           </li>
           <li>
-            <%= link_to MyRankedModel.model_name.human, my_ranked_models_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
+            <%= link_to MyListItem.model_name.human, my_list_items_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
           </li>
           <li>
-            <%= link_to MyListItem.model_name.human, my_list_items_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
+            <%= link_to MyRankedModel.model_name.human, my_ranked_models_path, class: "block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700" %>
           </li>
           <% if helpers.user_signed_in? %>
             <li>

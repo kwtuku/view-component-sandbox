@@ -3,7 +3,7 @@ class MyModelsController < ApplicationController
   before_action :set_my_model, only: %i[show edit update destroy]
 
   def index
-    @my_models = MyModel.all
+    @my_models = MyModel.order(:created_at).page(params[:page])
   end
 
   def show; end

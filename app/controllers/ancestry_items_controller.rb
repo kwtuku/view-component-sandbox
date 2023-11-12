@@ -1,5 +1,5 @@
 class AncestryItemsController < ApplicationController
-  layout "my_models"
+  include MyModelsLayout
 
   def index
     @ancestry_items = AncestryItem.then { params[:type] == "roots" ? _1.roots : _1 }.order(:created_at)

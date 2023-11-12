@@ -1,5 +1,5 @@
 class MyListItemsController < ApplicationController
-  layout "my_models"
+  include MyModelsLayout
 
   def index
     @my_list_items = MyListItem.order(:my_scope, :position)

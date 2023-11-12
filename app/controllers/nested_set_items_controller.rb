@@ -1,5 +1,5 @@
 class NestedSetItemsController < ApplicationController
-  layout "my_models"
+  include MyModelsLayout
 
   def index
     @nested_set_items = NestedSetItem.then do |item|

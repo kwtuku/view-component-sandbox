@@ -3,3 +3,4 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 
 Turbo.setProgressBarDelay(0)
+import "./channels"

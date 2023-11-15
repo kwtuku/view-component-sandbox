@@ -46,6 +46,11 @@
       <div class="p-5">
         <%= render ToggleComponent.new %>
       </div>
+      <div class="grid grid-cols-2 gap-4 p-5">
+        <% text = "aa\r\nbb\n\ncc\n\n\n<script>alert(\"XSS\")</script>\n<a href=\"/\">Home</a>" %>
+        <div><%= nl2br(text) %></div>
+        <textarea readonly rows="<%= text.lines.size %>" class="block w-full resize-none border-0 p-0 ring-0 focus:ring-0"><%= text %></textarea>
+      </div>
       <%= yield %>
     </div>
   </body>

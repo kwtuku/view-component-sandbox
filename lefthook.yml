@@ -1,0 +1,6 @@
+pre-commit:
+  parallel: true
+  commands:
+    bundle_install:
+      glob: Gemfile
+      run: BUNDLE_GEMFILE=gemfiles/rails_edge.gemfile bundle install && git diff --exit-code gemfiles/rails_edge.gemfile.lock

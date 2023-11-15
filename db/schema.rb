@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_23_134942) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_05_144600) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_23_134942) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_ancestry_items_on_ancestry"
+  end
+
+  create_table "my_list_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "my_string", null: false
+    t.integer "my_scope", null: false
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "my_models", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -54,6 +62,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_23_134942) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["my_model_id"], name: "index_my_pg_models_on_my_model_id"
+  end
+
+  create_table "my_ranked_models", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "my_string", null: false
+    t.integer "my_scope", null: false
+    t.integer "row_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "nested_set_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

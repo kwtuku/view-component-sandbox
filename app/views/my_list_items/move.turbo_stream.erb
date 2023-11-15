@@ -1,0 +1,3 @@
+<%= turbo_stream.update "my_list_items" do %>
+  <%= render partial: "my_list_items/my_list_item", collection: @my_list_items %>
+<% end %>

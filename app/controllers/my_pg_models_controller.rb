@@ -1,5 +1,5 @@
 class MyPgModelsController < ApplicationController
-  layout "my_models"
+  include MyModelsLayout
   before_action :set_my_pg_model, only: %i[show edit update destroy]
 
   def index

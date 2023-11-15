@@ -6,6 +6,12 @@ Rails.application.routes.draw do
 
   resources :ancestry_items, only: %i[index]
   resources :nested_set_items, only: %i[index]
+  resources :my_ranked_models, only: %i[index] do
+    patch "move", on: :member
+  end
+  resources :my_list_items, only: %i[index] do
+    patch "move", on: :member
+  end
 
   namespace :primer do
     resources :repositories

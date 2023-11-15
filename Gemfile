@@ -16,11 +16,14 @@ gem "stimulus-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
+gem "acts_as_list"
 gem "ancestry"
 gem "awesome_nested_set"
 gem "devise"
 gem "haml-rails"
+gem "kaminari"
 gem "primer_view_components"
+gem "ranked-model"
 gem "view_component"
 
 group :development, :test do
@@ -38,6 +41,7 @@ group :development do
   gem "bullet"
   gem "html2haml", require: false
   gem "htmlbeautifier", require: false
+  gem "lefthook"
   gem "letter_opener_web"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false

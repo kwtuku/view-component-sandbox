@@ -39,7 +39,7 @@
           <ul id="online-users">
             <% online_user_ids = Kredis.hash("user_id_by_stream_id").values.uniq %>
             <% online_users = User.where(id: online_user_ids).order(:created_at) %>
-            <%= render partial: "layouts/online_users", locals: { online_users: } %>
+            <%= render renderable: OnlineUsersComponent.new(online_users:) %>
           </ul>
         </div>
       <% end %>

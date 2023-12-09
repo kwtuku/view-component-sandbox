@@ -7,7 +7,7 @@ class OnlineChannel < Turbo::StreamsChannel
 
     online_user_ids = Kredis.hash("user_id_by_stream_id").values.uniq
     online_users = User.where(id: online_user_ids).order(:created_at)
-    current_user.broadcast_update_to("online-users", target: "online-users", partial: "layouts/online_users", locals: { online_users: })
+    current_user.broadcast_update_to("online-users", target: "online-users", renderable: OnlineUsersComponent.new(online_users:))
   end
 
   def unsubscribed
@@ -15,6 +15,6 @@ class OnlineChannel < Turbo::StreamsChannel
 
     online_user_ids = Kredis.hash("user_id_by_stream_id").values.uniq
     online_users = User.where(id: online_user_ids).order(:created_at)
-    current_user.broadcast_update_to("online-users", target: "online-users", partial: "layouts/online_users", locals: { online_users: })
+    current_user.broadcast_update_to("online-users", target: "online-users", renderable: OnlineUsersComponent.new(online_users:))
   end
 end

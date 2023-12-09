@@ -157,6 +157,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    kredis (1.6.0)
+      activemodel (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      redis (>= 4.2, < 6)
     language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
@@ -386,6 +390,7 @@ DEPENDENCIES
   htmlbeautifier
   jsbundling-rails
   kaminari
+  kredis
   lefthook
   letter_opener_web
   parallel_tests

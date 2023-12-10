@@ -22,6 +22,7 @@ gem "awesome_nested_set"
 gem "devise"
 gem "haml-rails"
 gem "kaminari"
+gem "kredis"
 gem "primer_view_components"
 gem "ranked-model"
 gem "view_component"
@@ -29,6 +30,7 @@ gem "view_component"
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 
+  gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "parallel_tests"
   gem "rspec-rails"

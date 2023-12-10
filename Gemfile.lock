@@ -112,6 +112,10 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     erubis (2.7.0)
     factory_bot (6.2.1)
@@ -157,6 +161,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    kredis (1.6.0)
+      activemodel (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      redis (>= 4.2, < 6)
     language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
@@ -380,12 +388,14 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
+  dotenv-rails
   factory_bot_rails
   haml-rails
   html2haml
   htmlbeautifier
   jsbundling-rails
   kaminari
+  kredis
   lefthook
   letter_opener_web
   parallel_tests

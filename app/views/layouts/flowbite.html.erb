@@ -31,6 +31,18 @@
           <%= alert %>
         </div>
       <% end %>
+      <% if user_signed_in? %>
+        <div class="p-5">
+          <%= turbo_stream_from "online-users" %>
+          <%= turbo_stream_from current_user, channel: OnlineChannel, data: { stream_id: SecureRandom.uuid } %>
+          <p>オンライン中のユーザー</p>
+          <ul id="online-users">
+            <% online_user_ids = Kredis.hash("user_id_by_stream_id").values.uniq %>
+            <% online_users = User.where(id: online_user_ids).order(:created_at) %>
+            <%= render renderable: OnlineUsersComponent.new(online_users:) %>
+          </ul>
+        </div>
+      <% end %>
       <div class="p-5" data-testid="tippy-dropdown">
         <%= render TippyDropdownComponent.new %>
       </div>

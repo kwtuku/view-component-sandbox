@@ -44,6 +44,16 @@ module ViewComponentSandbox
 
     # haml-rails を入れているので明示
     config.app_generators.template_engine :erb
+
+    # https://qiita.com/kyntk/items/b7617e9eb959c44ecf16
+    # Rails v7.1からは別の書き方がある
+    lib = root.join("lib")
+    config.autoload_paths << lib
+    config.eager_load_paths << lib
+    Rails.autoloaders.main.ignore(
+      lib.join("assets"),
+      lib.join("tasks")
+    )
   end
 end
 

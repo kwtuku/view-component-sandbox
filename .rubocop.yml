@@ -31,7 +31,7 @@ AllCops:
     - spec/rails_helper.rb
     - spec/spec_helper.rb
 
-#　====================================================================================================
+# ====================================================================================================
 # Rufo
 Style/StringLiterals:
   EnforcedStyle: double_quotes
@@ -47,7 +47,7 @@ Style/TrailingCommaInArrayLiteral:
 
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
-#　====================================================================================================
+# ====================================================================================================
 
 Layout/LineLength:
   Max: 160

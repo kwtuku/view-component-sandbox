@@ -5,7 +5,7 @@ RSpec.describe TippyDropdownComponent do
     visit "/rails/view_components/tippy_dropdown_component/default"
 
     expect(page).to have_button "Open user menu"
-    expect(page).not_to have_content "Neil Sims"
+    expect(page).to have_no_content "Neil Sims"
 
     click_button "Open user menu"
     expect(page).to have_content "Neil Sims"

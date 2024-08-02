@@ -4,6 +4,7 @@ require:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 inherit_mode:
   merge:
@@ -31,7 +32,7 @@ AllCops:
     - spec/rails_helper.rb
     - spec/spec_helper.rb
 
-#　====================================================================================================
+# ====================================================================================================
 # Rufo
 Style/StringLiterals:
   EnforcedStyle: double_quotes
@@ -47,7 +48,11 @@ Style/TrailingCommaInArrayLiteral:
 
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
-#　====================================================================================================
+# ====================================================================================================
+
+# rubocop-capybara v3.0で削除される予定なので無効
+Capybara/ClickLinkOrButtonStyle:
+  Enabled: false
 
 Layout/LineLength:
   Max: 160

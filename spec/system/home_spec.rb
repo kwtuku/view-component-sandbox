@@ -18,7 +18,7 @@ RSpec.describe "トップページ" do
 
     within '[data-testid="tippy-dropdown"]' do
       expect(page).to have_no_content "Neil Sims"
-      click_button "Open user menu"
+      click_on "Open user menu"
       expect(page).to have_content "Neil Sims"
     end
   end

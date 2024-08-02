@@ -50,6 +50,10 @@ Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
 # ====================================================================================================
 
+# rubocop-capybara v3.0で削除される予定なので無効
+Capybara/ClickLinkOrButtonStyle:
+  Enabled: false
+
 Layout/LineLength:
   Max: 160
 

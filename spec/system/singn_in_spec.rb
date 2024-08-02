@@ -5,12 +5,12 @@ RSpec.describe "ログイン" do
     context "入力内容が無効なとき" do
       it "フラッシュメッセージが表示される" do
         visit root_path
-        click_on "ログイン"
+        click_link "ログイン"
 
         expect(page).to have_button "ログイン"
         expect(page).to have_current_path new_user_session_path
 
-        click_on "ログイン"
+        click_button "ログイン"
 
         expect(page).to have_content "Eメールまたはパスワードが違います。"
         expect(page).to have_current_path new_user_session_path
@@ -22,14 +22,14 @@ RSpec.describe "ログイン" do
 
       it "フラッシュメッセージが表示される" do
         visit root_path
-        click_on "ログイン"
+        click_link "ログイン"
 
         expect(page).to have_button "ログイン"
         expect(page).to have_current_path new_user_session_path
 
         fill_in "Eメール", with: "unconfirmed@example.com"
         fill_in "パスワード", with: "unconfirmed"
-        click_on "ログイン"
+        click_button "ログイン"
 
         expect(page).to have_content "メールアドレスの本人確認が必要です。"
         expect(page).to have_current_path new_user_session_path
@@ -43,7 +43,7 @@ RSpec.describe "ログイン" do
     it "フラッシュメッセージが表示される" do
       sign_in user
       visit root_path
-      click_on "ログアウト"
+      click_button "ログアウト"
 
       expect(page).to have_content "ログアウトしました。"
       expect(page).to have_current_path root_path

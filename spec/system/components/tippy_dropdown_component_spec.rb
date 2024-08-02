@@ -7,7 +7,7 @@ RSpec.describe TippyDropdownComponent do
     expect(page).to have_button "Open user menu"
     expect(page).to have_no_content "Neil Sims"
 
-    click_on "Open user menu"
+    click_button "Open user menu"
     expect(page).to have_content "Neil Sims"
   end
 end

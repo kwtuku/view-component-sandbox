@@ -6,18 +6,18 @@ RSpec.describe "アカウント確認メール再送" do
   context "入力内容が有効なとき" do
     it "フラッシュメッセージが表示される、メールが送信される" do
       visit root_path
-      click_on "ログイン"
+      click_link "ログイン"
 
       expect(page).to have_button "ログイン"
       expect(page).to have_current_path new_user_session_path
 
-      click_on "アカウント確認のメールを受け取っていませんか？"
+      click_link "アカウント確認のメールを受け取っていませんか？"
 
       expect(page).to have_button "アカウント確認メール再送"
       expect(page).to have_current_path new_user_confirmation_path
 
       fill_in "Eメール", with: "resend@example.com"
-      click_on "アカウント確認メール再送"
+      click_button "アカウント確認メール再送"
 
       expect(page).to have_content "アカウントの有効化について数分以内にメールでご連絡します。"
       expect(page).to have_current_path new_user_session_path
@@ -32,17 +32,17 @@ RSpec.describe "アカウント確認メール再送" do
   context "入力内容が無効なとき" do
     it "エラーメッセージが表示される" do
       visit root_path
-      click_on "ログイン"
+      click_link "ログイン"
 
       expect(page).to have_button "ログイン"
       expect(page).to have_current_path new_user_session_path
 
-      click_on "アカウント確認のメールを受け取っていませんか？"
+      click_link "アカウント確認のメールを受け取っていませんか？"
 
       expect(page).to have_button "アカウント確認メール再送"
       expect(page).to have_current_path new_user_confirmation_path
 
-      click_on "アカウント確認メール再送"
+      click_button "アカウント確認メール再送"
 
       expect(page).to have_content "エラーが発生したため ユーザー は保存されませんでした。"
       expect(page).to have_content "Eメールを入力してください"

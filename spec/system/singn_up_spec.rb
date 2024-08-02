@@ -4,8 +4,8 @@ RSpec.describe "アカウント登録して有効化してログイン" do
   context "入力内容が有効なとき" do
     it "フラッシュメッセージが表示される、メールが送信される、メールのリンクを開くとログインできるようになる" do
       visit root_path
-      click_on "ログイン"
-      click_on "アカウント登録"
+      click_link "ログイン"
+      click_link "アカウント登録"
 
       expect(page).to have_button "アカウント登録"
       expect(page).to have_current_path new_user_registration_path
@@ -13,7 +13,7 @@ RSpec.describe "アカウント登録して有効化してログイン" do
       fill_in "Eメール", with: "alice@example.com"
       fill_in "パスワード", with: "password"
       fill_in "パスワード（確認用）", with: "password"
-      click_on "アカウント登録"
+      click_button "アカウント登録"
 
       expect(page).to have_content "本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。"
       expect(page).to have_current_path root_path
@@ -31,7 +31,7 @@ RSpec.describe "アカウント登録して有効化してログイン" do
 
       fill_in "Eメール", with: "alice@example.com"
       fill_in "パスワード", with: "password"
-      click_on "ログイン"
+      click_button "ログイン"
 
       expect(page).to have_content "ログインしました。"
       expect(page).to have_current_path root_path
@@ -41,13 +41,13 @@ RSpec.describe "アカウント登録して有効化してログイン" do
   context "入力内容が無効なとき" do
     it "エラーメッセージが表示される" do
       visit root_path
-      click_on "ログイン"
-      click_on "アカウント登録"
+      click_link "ログイン"
+      click_link "アカウント登録"
 
       expect(page).to have_button "アカウント登録"
       expect(page).to have_current_path new_user_registration_path
 
-      click_on "アカウント登録"
+      click_button "アカウント登録"
 
       expect(page).to have_content "2 件のエラーが発生したため ユーザー は保存されませんでした。"
       expect(page).to have_content "Eメールを入力してください"

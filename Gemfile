@@ -46,9 +46,12 @@ group :development do
   gem "lefthook"
   gem "letter_opener_web"
   gem "rubocop", require: false
+  gem "rubocop-capybara", require: false
+  gem "rubocop-factory_bot", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
+  gem "rubocop-rspec_rails", require: false
   gem "rufo", require: false
   gem "tailwind-sorter", require: false
 end
